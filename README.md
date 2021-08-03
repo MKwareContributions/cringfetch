@@ -12,6 +12,8 @@ cringfetch does what neofetch/screenfetch/* fetch does. It shows short info abou
 
 ## Using
 
+(Requires .NET Framework 4)
+
 1. Download pre-built binary from "Releases"
 2. Place it wherever you want
 3. Run `cmd.exe`
