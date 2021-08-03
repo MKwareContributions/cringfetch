@@ -17,7 +17,7 @@ cringfetch does what neofetch/screenfetch/* fetch does. It shows short info abou
 3. Run `cmd.exe`
 4. Run program from cmd
 
-[Note] If you want to run cringfetch from any place, copy cringfetch to your `Windows` folder.
+[Note] If you want to run cringfetch from any place, copy `cringfetch.exe` to your `Windows` folder.
 
 ## Source code
 
