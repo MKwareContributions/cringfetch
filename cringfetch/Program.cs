@@ -71,7 +71,6 @@ namespace cringfetch
             {
                 Console.WriteLine("ASCII Art will be added in the next update.");
             }
-            Console.ReadKey();
         }
         
         public static string GetLocalIPAddress()
