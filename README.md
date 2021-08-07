@@ -3,6 +3,8 @@ As seen on Linux!
 
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
+![screenshot](https://i.imgur.com/xbB1d32.png)
+
 ***
 
 cringfetch does what neofetch/screenfetch/* fetch does. It shows short info about your system, but now on Windows!
