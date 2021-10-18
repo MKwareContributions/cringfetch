@@ -24,120 +24,96 @@ namespace cringfetch
             var ossub = os.Substring(0,3);
             var machine = System.Environment.MachineName;
             var cores = System.Environment.ProcessorCount;                   
-            var user = System.Environment.UserName;
-            Random rand = new Random();
+            string user = System.Environment.UserName;
+            var color = ConsoleColor.Cyan;                                                  // Here you can set your custom color for cringfetch
             bool arch = System.Environment.Is64BitOperatingSystem;
             Console.WriteLine();
-            string a = user + "@" + machine;
-            var o = a.IndexOf('@');
-            Console.Write(a.Substring(0, o));
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.Write(a[o]);
+            Console.WriteLine();
+            Console.ForegroundColor = color; Console.Write(user);
             Console.ResetColor();
-            Console.WriteLine(a.Substring(o + 1));
-            BlueText("-------------");
+            Console.Write("@");
+            Console.ForegroundColor = color; Console.Write(machine + "\n");
+            Console.ResetColor();
+            Console.WriteLine();
+            Console.WriteLine("-------------");
             Console.WriteLine();
             Console.WriteLine();
             switch (ossub)
             {
-                case("6.1"):
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("O");        // I DO know that this is not the best solution, but if you know a better solution - use Issues or Pull Requests.
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("S");
-                    Console.ResetColor();
-                    Console.Write(": Windows 7\n");
-                    break;
-                case("6.2"):
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("O");        
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("S");
-                    Console.ResetColor();
-                    Console.Write(": Windows 8\n");
-                    break;
-                case("6.3"):
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("O");        
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("S");
-                    Console.ResetColor();
-                    Console.Write(": Windows 8.1\n");
-                    break;
-                case("10."):
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("O");        
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("S");
-                    Console.ResetColor();
-                    Console.Write(": Windows 10\n");
-                    break;
                 default:
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("O");        
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("S");
+                    Console.ForegroundColor = color; Console.Write("O");        
+                    Console.ForegroundColor = color; Console.Write("S");
                     Console.ResetColor();
-                    Console.Write(": Windows NT " + ossub);
+                    Console.Write(": Windows NT " + ossub + "\n");
                     break;
             }
             switch (arch)
             {
                 case(true):
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("A");        // Ok, this is the worst part
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("r");
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("c");
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("h");
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("i");
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("t");
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("e");
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("c");
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("t");
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("u");
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("r");
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("e");
+                    Console.ForegroundColor = color; Console.Write("A");        // Ok, this is the worst part
+                    Console.ForegroundColor = color; Console.Write("r");
+                    Console.ForegroundColor = color; Console.Write("c");
+                    Console.ForegroundColor = color; Console.Write("h");
+                    Console.ForegroundColor = color; Console.Write("i");
+                    Console.ForegroundColor = color; Console.Write("t");
+                    Console.ForegroundColor = color; Console.Write("e");
+                    Console.ForegroundColor = color; Console.Write("c");
+                    Console.ForegroundColor = color; Console.Write("t");
+                    Console.ForegroundColor = color; Console.Write("u");
+                    Console.ForegroundColor = color; Console.Write("r");
+                    Console.ForegroundColor = color; Console.Write("e");
                     Console.ResetColor();
                     Console.WriteLine(": 64-bit");
                     break;
                 case(false):
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("A");        
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("r");
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("c");
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("h");
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("i");
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("t");
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("e");
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("c");
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("t");
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("u");
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("r");
-                    Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("e");
+                    Console.ForegroundColor = color; Console.Write("A");        
+                    Console.ForegroundColor = color; Console.Write("r");
+                    Console.ForegroundColor = color; Console.Write("c");
+                    Console.ForegroundColor = color; Console.Write("h");
+                    Console.ForegroundColor = color; Console.Write("i");
+                    Console.ForegroundColor = color; Console.Write("t");
+                    Console.ForegroundColor = color; Console.Write("e");
+                    Console.ForegroundColor = color; Console.Write("c");
+                    Console.ForegroundColor = color; Console.Write("t");
+                    Console.ForegroundColor = color; Console.Write("u");
+                    Console.ForegroundColor = color; Console.Write("r");
+                    Console.ForegroundColor = color; Console.Write("e");
                     Console.ResetColor();
                     Console.WriteLine(": 32-bit");
                     break;
             }
             foreach (ManagementObject mo in osDetailsCollection)
             {
-                Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("C");
-                Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("P");
-                Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("U");
+                Console.ForegroundColor = color; Console.Write("C");
+                Console.ForegroundColor = color; Console.Write("P");
+                Console.ForegroundColor = color; Console.Write("U");
                 Console.ResetColor();
                 Console.WriteLine(string.Format(": {0}", (string)mo["Name"]));
             }
-            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("C");    // dear God
-            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("P");
-            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("U");
+            Console.ForegroundColor = color; Console.Write("C");    // dear God
+            Console.ForegroundColor = color; Console.Write("P");
+            Console.ForegroundColor = color; Console.Write("U");
             Console.Write(" ");
-            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("c");
-            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("o");
-            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("r");
-            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("e");    // In the next update I should make color as var, so you can change it easily (if it's possible)
-            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("s");
+            Console.ForegroundColor = color; Console.Write("c");
+            Console.ForegroundColor = color; Console.Write("o");
+            Console.ForegroundColor = color; Console.Write("r");
+            Console.ForegroundColor = color; Console.Write("e");    // In the next update I should make color as var, so you can change it easily (if it's possible)
+            Console.ForegroundColor = color; Console.Write("s");
             Console.ResetColor();
             Console.WriteLine(": " + cores);
-            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("R");
-            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("A");
-            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("M");
+            Console.ForegroundColor = color; Console.Write("R");
+            Console.ForegroundColor = color; Console.Write("A");
+            Console.ForegroundColor = color; Console.Write("M");
             Console.ResetColor();
             Console.WriteLine(": " + totalGBRam + " GB");
-            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("L");
-            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("A");
-            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("N");
+            Console.ForegroundColor = color; Console.Write("L");
+            Console.ForegroundColor = color; Console.Write("A");
+            Console.ForegroundColor = color; Console.Write("N");
             Console.Write(" ");
-            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("I");
-            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("P");
-            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("v");
-            Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("4");
+            Console.ForegroundColor = color; Console.Write("I");
+            Console.ForegroundColor = color; Console.Write("P");
+            Console.ForegroundColor = color; Console.Write("v");
+            Console.ForegroundColor = color; Console.Write("4");
             Console.ResetColor();
             Console.WriteLine(": " + GetLocalIPAddress());
             Console.WriteLine();
@@ -154,13 +130,6 @@ namespace cringfetch
                 }
             }
             throw new Exception("No IPv4!");
-        }
-        static void BlueText(string value)
-        {
-            Console.BackgroundColor = ConsoleColor.Black;       
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.Write(value.PadRight(Console.WindowWidth - 1));                            
-            Console.ResetColor();
         }
     }
 }
