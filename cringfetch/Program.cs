@@ -25,7 +25,7 @@ namespace cringfetch
             var machine = System.Environment.MachineName;
             var cores = System.Environment.ProcessorCount;                   
             string user = System.Environment.UserName;
-            var color = ConsoleColor.Cyan;                                                  // Here you can set your custom color for cringfetch
+            var color = ConsoleColor.Cyan;                                                  // Here you can set your custom color theme
             bool arch = System.Environment.Is64BitOperatingSystem;
             Console.WriteLine();
             Console.WriteLine();
@@ -50,7 +50,7 @@ namespace cringfetch
             switch (arch)
             {
                 case(true):
-                    Console.ForegroundColor = color; Console.Write("A");        // Ok, this is the worst part
+                    Console.ForegroundColor = color; Console.Write("A");        // There was no other simple way, sorry
                     Console.ForegroundColor = color; Console.Write("r");
                     Console.ForegroundColor = color; Console.Write("c");
                     Console.ForegroundColor = color; Console.Write("h");
@@ -90,14 +90,14 @@ namespace cringfetch
                 Console.ResetColor();
                 Console.WriteLine(string.Format(": {0}", (string)mo["Name"]));
             }
-            Console.ForegroundColor = color; Console.Write("C");    // dear God
+            Console.ForegroundColor = color; Console.Write("C");    
             Console.ForegroundColor = color; Console.Write("P");
             Console.ForegroundColor = color; Console.Write("U");
             Console.Write(" ");
             Console.ForegroundColor = color; Console.Write("c");
             Console.ForegroundColor = color; Console.Write("o");
             Console.ForegroundColor = color; Console.Write("r");
-            Console.ForegroundColor = color; Console.Write("e");    // In the next update I should make color as var, so you can change it easily (if it's possible)
+            Console.ForegroundColor = color; Console.Write("e");    
             Console.ForegroundColor = color; Console.Write("s");
             Console.ResetColor();
             Console.WriteLine(": " + cores);
