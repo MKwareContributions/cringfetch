@@ -25,7 +25,7 @@ namespace cringfetch
             var machine = System.Environment.MachineName;
             var cores = System.Environment.ProcessorCount;                   
             string user = System.Environment.UserName;
-            var color = ConsoleColor.Cyan;                                                  // Here you can set your custom color for cringfetch
+            var color = ConsoleColor.Cyan;                                                  // Here you can set your custom color theme
             bool arch = System.Environment.Is64BitOperatingSystem;
             Console.WriteLine();
             Console.WriteLine();
