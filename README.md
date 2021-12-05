@@ -3,7 +3,7 @@ As seen on Linux!
 
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
-![screenshot](https://mknet.somee.com/githubscr/cringfetchcolor.png)
+![screenshot](https://mrkod.eu.org/githubscr/cringfetch.png)
 
 ***
 
