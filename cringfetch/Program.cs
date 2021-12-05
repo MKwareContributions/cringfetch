@@ -160,6 +160,7 @@ namespace cringfetch
             Console.ForegroundColor = color; Console.Write("h");
             Console.ResetColor();
             Console.WriteLine(": version 1.2");
+            Console.WriteLine();
         }
         
         public static string GetLocalIPAddress()
