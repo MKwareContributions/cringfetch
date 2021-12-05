@@ -5,3 +5,5 @@ Add 'Installed Packages'
 Add 'Resolution'
 
 Add 'Uptime'
+
+[Temporarily] Remove 'Shell' showing for NT > 6.1 because it crashes program (and fix it ofc)
