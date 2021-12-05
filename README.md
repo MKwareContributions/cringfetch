@@ -33,3 +33,4 @@ cringfetch does what neofetch/screenfetch/* fetch does. It shows short info abou
 1. Click `Build` from top bar menu
 2. Click `Build solution` or `Build cringfetch`
 3. Get built binary in `cringfetch\bin\Debug`
+
