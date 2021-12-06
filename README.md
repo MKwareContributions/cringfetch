@@ -7,7 +7,7 @@ As seen on Linux!
 
 ***
 
-cringfetch does what neofetch/screenfetch/* fetch does. It shows short info about your system, but now on Windows!
+cringfetch does what neofetch/screenfetch/\*fetch does. It shows short info about your system, but now on Windows!
 
 ***
 # Installation
