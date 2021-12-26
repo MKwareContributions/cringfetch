@@ -26,7 +26,7 @@ If you want to run cringfetch from any place, copy `cringfetch.exe` to your `%wi
 ## Source code
 
 1. As always, download zip archive with source code.
-2. Open `cringfetch.sln` in Visual Studio (2013 recomended)
+2. Open `cringfetch.sln` in Visual Studio (2013 recommended)
 
 ## Compiling
 
