@@ -6,4 +6,6 @@ Add 'Resolution'
 
 Add 'Uptime'
 
+Make code more readable
 
+Try getting Windows version from registry not from var
