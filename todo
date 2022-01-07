@@ -1,6 +1,6 @@
 <Mid or end of Q1 2022>
 
-Remove color from separator
+Remove color from separator (done)
 
 Add 'Installed Packages'
 
@@ -8,7 +8,7 @@ Add 'Resolution'
 
 Add 'Uptime'
 
-Make code more readable
+Make code more readable (WIP)
 
 Try getting Windows version from registry not from var
 
