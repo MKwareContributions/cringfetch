@@ -35,8 +35,11 @@ namespace cringfetch
             Console.Write("@");
             Console.ForegroundColor = color; Console.Write(machine + "\n");
             Console.ResetColor();
-            Console.ForegroundColor = color; Console.Write("               000 00000000000000000\n");
-            Console.WriteLine("     0000000000000 00000000000000000    -------------");
+            Console.ForegroundColor = color; Console.Write("               000 00000000000000000");
+            Console.ResetColor();
+            Console.WriteLine("    -------------");
+            Console.ForegroundColor = color;
+            Console.WriteLine("     0000000000000 00000000000000000");
             Console.WriteLine("     0000000000000 00000000000000000");
             Console.WriteLine("     0000000000000 00000000000000000");
             switch (ossub)
@@ -51,7 +54,7 @@ namespace cringfetch
             switch (arch)
             {
                 case(true):
-                    Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    A");        // There was no other simple way, sorry
+                    Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    A");        // There was no other simple way, sorry (will be soon)
                     Console.ForegroundColor = color; Console.Write("r");
                     Console.ForegroundColor = color; Console.Write("c");
                     Console.ForegroundColor = color; Console.Write("h");
@@ -117,11 +120,7 @@ namespace cringfetch
             Console.ForegroundColor = color; Console.Write("4");
             Console.ResetColor();
             Console.WriteLine(": " + GetLocalIPAddress());
-            Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    T");
-            Console.ForegroundColor = color; Console.Write("h");
-            Console.ForegroundColor = color; Console.Write("e");
-            Console.ForegroundColor = color; Console.Write("m");
-            Console.ForegroundColor = color; Console.Write("e");
+            Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    Theme");
             Console.ResetColor();
             Console.WriteLine(": " + GetTheme());
             Process p = Process.GetCurrentProcess();
@@ -130,37 +129,22 @@ namespace cringfetch
 
             if (Process.GetProcessById(ppid).ProcessName == "powershell")
             {
-                Console.ForegroundColor = color; Console.Write("               000 00000000000000000    S");
-                Console.ForegroundColor = color; Console.Write("h");
-                Console.ForegroundColor = color; Console.Write("e");
-                Console.ForegroundColor = color; Console.Write("l");
-                Console.ForegroundColor = color; Console.Write("l");
+                Console.ForegroundColor = color; Console.Write("               000 00000000000000000    Shell");
                 Console.ResetColor();
                 Console.WriteLine(": PowerShell");
             }
             else
             {
-                Console.ForegroundColor = color; Console.Write("               000 00000000000000000    S");
-                Console.ForegroundColor = color; Console.Write("h");
-                Console.ForegroundColor = color; Console.Write("e");
-                Console.ForegroundColor = color; Console.Write("l");
-                Console.ForegroundColor = color; Console.Write("l");
+                Console.ForegroundColor = color; Console.Write("               000 00000000000000000    Shell");
                 Console.ResetColor();
                 Console.WriteLine(": cmd");
             }
-            Console.ForegroundColor = color; Console.Write("                           000000000    c");
-            Console.ForegroundColor = color; Console.Write("r");
-            Console.ForegroundColor = color; Console.Write("i");
-            Console.ForegroundColor = color; Console.Write("n");
-            Console.ForegroundColor = color; Console.Write("g");
-            Console.ForegroundColor = color; Console.Write("f");
-            Console.ForegroundColor = color; Console.Write("e");
-            Console.ForegroundColor = color; Console.Write("t");
-            Console.ForegroundColor = color; Console.Write("c");
-            Console.ForegroundColor = color; Console.Write("h");
+            Console.ForegroundColor = color; Console.Write("                           000000000    cringfetch");
             Console.ResetColor();
-            Console.WriteLine(": version 1.2");
+            Console.WriteLine(": version 1.2.1 (dev build)");
             Console.WriteLine();
+            Console.WriteLine();
+            Console.Read(); //REMOVE AFTER FINISHING WORK GODDAMIT
         }
         
         public static string GetLocalIPAddress()
