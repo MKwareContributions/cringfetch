@@ -39,13 +39,15 @@ namespace cringfetch
             Console.ForegroundColor = color;
             Console.WriteLine("     0000000000000 00000000000000000");
             Console.WriteLine("     0000000000000 00000000000000000");
-            Console.WriteLine("     0000000000000 00000000000000000");
             Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    OS");
             Console.ResetColor();
-            Console.Write(": " + GetOSVersion() + "\n");
+            Console.WriteLine(": " + GetOSVersion());
+            Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    Kernel");
+            Console.ResetColor();
+            Console.WriteLine(": NT " + GetNTVersion());
             switch (arch)
             {
-                case(true):
+                case(true):                                              
                     Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    Architecture");
                     Console.ResetColor();
                     Console.WriteLine(": 64-bit");
@@ -123,6 +125,13 @@ namespace cringfetch
             string RegistryKey = @"HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion";
             string osver;
             osver = (string)Registry.GetValue(RegistryKey, "ProductName", string.Empty);
+            return osver;
+        }
+        public static string GetNTVersion()
+        {
+            string RegistryKey = @"HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion";
+            string osver;
+            osver = (string)Registry.GetValue(RegistryKey, "CurrentVersion", string.Empty);
             return osver;
         }
     }
