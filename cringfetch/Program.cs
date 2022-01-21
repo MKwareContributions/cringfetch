@@ -9,6 +9,7 @@ using System.Net;
 using System.Net.Sockets;
 using Microsoft.Win32;
 using System.Diagnostics;
+using System.Net.NetworkInformation;
 
 namespace cringfetch
 {
@@ -26,6 +27,9 @@ namespace cringfetch
             string user = System.Environment.UserName;
             var color = ConsoleColor.Cyan;                                                  // Here you can set your custom color theme
             bool arch = System.Environment.Is64BitOperatingSystem;
+            var LANIP = (from address in NetworkInterface.GetAllNetworkInterfaces().Select(x => x.GetIPProperties()).SelectMany(x => x.UnicastAddresses).Select(x => x.Address)
+                         where !IPAddress.IsLoopback(address) && address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork
+                         select address).FirstOrDefault();
             Console.WriteLine();
             Console.WriteLine();
             Console.ForegroundColor = color; Console.Write("                           000000000    " + user);
@@ -72,7 +76,7 @@ namespace cringfetch
             Console.WriteLine(": " + totalGBRam + " GB");
             Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    LAN IPv4");
             Console.ResetColor();
-            Console.WriteLine(": " + GetLocalIPAddress());
+            Console.WriteLine(": " + LANIP);
             Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    Theme");
             Console.ResetColor();
             Console.WriteLine(": " + GetTheme());
@@ -105,18 +109,6 @@ namespace cringfetch
             Console.Read(); //REMOVE AFTER FINISHING WORK GODDAMIT
         }
         
-        public static string GetLocalIPAddress()
-        {
-            var host = Dns.GetHostEntry(Dns.GetHostName());
-            foreach (var ip in host.AddressList)
-            {
-                if (ip.AddressFamily == AddressFamily.InterNetwork)
-                {
-                    return ip.ToString();
-                }
-            }
-            throw new Exception("No IPv4!");
-        }
         public static string GetTheme()
         {
             string RegistryKey = @"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes";
