@@ -21,8 +21,6 @@ namespace cringfetch
             ManagementObjectCollection osDetailsCollection = objOSDetails.Get();
             StringBuilder sb = new StringBuilder();
             var totalGBRam = Convert.ToInt32((new ComputerInfo().TotalPhysicalMemory / (Math.Pow(1024, 3))) + 0.5);
-            var os = Convert.ToString(new ComputerInfo().OSVersion);
-            var ossub = os.Substring(0,3);
             var machine = System.Environment.MachineName;
             var cores = System.Environment.ProcessorCount;                   
             string user = System.Environment.UserName;
@@ -42,82 +40,35 @@ namespace cringfetch
             Console.WriteLine("     0000000000000 00000000000000000");
             Console.WriteLine("     0000000000000 00000000000000000");
             Console.WriteLine("     0000000000000 00000000000000000");
-            switch (ossub)
-            {
-                default:
-                    Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    O");        
-                    Console.ForegroundColor = color; Console.Write("S");
-                    Console.ResetColor();
-                    Console.Write(": Windows NT " + ossub + "\n");
-                    break;
-            }
+            Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    OS");
+            Console.ResetColor();
+            Console.Write(": " + GetOSVersion() + "\n");
             switch (arch)
             {
                 case(true):
-                    Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    A");        // There was no other simple way, sorry (will be soon)
-                    Console.ForegroundColor = color; Console.Write("r");
-                    Console.ForegroundColor = color; Console.Write("c");
-                    Console.ForegroundColor = color; Console.Write("h");
-                    Console.ForegroundColor = color; Console.Write("i");
-                    Console.ForegroundColor = color; Console.Write("t");
-                    Console.ForegroundColor = color; Console.Write("e");
-                    Console.ForegroundColor = color; Console.Write("c");
-                    Console.ForegroundColor = color; Console.Write("t");
-                    Console.ForegroundColor = color; Console.Write("u");
-                    Console.ForegroundColor = color; Console.Write("r");
-                    Console.ForegroundColor = color; Console.Write("e");
+                    Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    Architecture");
                     Console.ResetColor();
                     Console.WriteLine(": 64-bit");
                     break;
                 case(false):
-                    Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    A");        
-                    Console.ForegroundColor = color; Console.Write("r");
-                    Console.ForegroundColor = color; Console.Write("c");
-                    Console.ForegroundColor = color; Console.Write("h");
-                    Console.ForegroundColor = color; Console.Write("i");
-                    Console.ForegroundColor = color; Console.Write("t");
-                    Console.ForegroundColor = color; Console.Write("e");
-                    Console.ForegroundColor = color; Console.Write("c");
-                    Console.ForegroundColor = color; Console.Write("t");
-                    Console.ForegroundColor = color; Console.Write("u");
-                    Console.ForegroundColor = color; Console.Write("r");
-                    Console.ForegroundColor = color; Console.Write("e");
+                    Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    Architecture");        
                     Console.ResetColor();
                     Console.WriteLine(": 32-bit");
                     break;
             }
             foreach (ManagementObject mo in osDetailsCollection)
             {
-                Console.ForegroundColor = color; Console.Write("                                        C");
-                Console.ForegroundColor = color; Console.Write("P");
-                Console.ForegroundColor = color; Console.Write("U");
+                Console.ForegroundColor = color; Console.Write("                                        CPU");
                 Console.ResetColor();
                 Console.WriteLine(string.Format(": {0}", (string)mo["Name"]));
             }
-            Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    C");    
-            Console.ForegroundColor = color; Console.Write("P");
-            Console.ForegroundColor = color; Console.Write("U");
-            Console.Write(" ");
-            Console.ForegroundColor = color; Console.Write("c");
-            Console.ForegroundColor = color; Console.Write("o");
-            Console.ForegroundColor = color; Console.Write("r");
-            Console.ForegroundColor = color; Console.Write("e");    
-            Console.ForegroundColor = color; Console.Write("s");
+            Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    CPU cores");    
             Console.ResetColor();
             Console.WriteLine(": " + cores);
-            Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    R");
-            Console.ForegroundColor = color; Console.Write("A");
-            Console.ForegroundColor = color; Console.Write("M");
+            Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    RAM");
             Console.ResetColor();
             Console.WriteLine(": " + totalGBRam + " GB");
-            Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    L");
-            Console.ForegroundColor = color; Console.Write("A");
-            Console.ForegroundColor = color; Console.Write("N");
-            Console.Write(" ");
-            Console.ForegroundColor = color; Console.Write("I");
-            Console.ForegroundColor = color; Console.Write("P");
-            Console.ForegroundColor = color; Console.Write("v");
-            Console.ForegroundColor = color; Console.Write("4");
+            Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    LAN IPv4");
             Console.ResetColor();
             Console.WriteLine(": " + GetLocalIPAddress());
             Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    Theme");
@@ -166,6 +117,13 @@ namespace cringfetch
             theme = (string)Registry.GetValue(RegistryKey, "CurrentTheme", string.Empty);
             theme = theme.Split('\\').Last().Split('.').First().ToString();
             return theme;
+        }
+        public static string GetOSVersion()
+        {
+            string RegistryKey = @"HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion";
+            string osver;
+            osver = (string)Registry.GetValue(RegistryKey, "ProductName", string.Empty);
+            return osver;
         }
     }
 }
