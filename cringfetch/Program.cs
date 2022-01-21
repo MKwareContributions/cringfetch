@@ -92,9 +92,14 @@ namespace cringfetch
                 Console.ResetColor();
                 Console.WriteLine(": cmd");
             }
-            Console.ForegroundColor = color; Console.Write("                           000000000    cringfetch");
+            Console.ForegroundColor = color; Console.Write("                           000000000    GPU");
             Console.ResetColor();
-            Console.WriteLine(": version 1.2.1 (dev build)");
+            ManagementObjectSearcher myVideoObject = new ManagementObjectSearcher("select * from Win32_VideoController");
+
+            foreach (ManagementObject obj in myVideoObject.Get())
+            {
+                Console.WriteLine(": " + obj["Name"]);
+            }
             Console.WriteLine();
             Console.WriteLine();
             Console.Read(); //REMOVE AFTER FINISHING WORK GODDAMIT
