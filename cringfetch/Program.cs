@@ -106,7 +106,6 @@ namespace cringfetch
             }
             Console.WriteLine();
             Console.WriteLine();
-            Console.Read(); //REMOVE AFTER FINISHING WORK GODDAMIT
         }
         
         public static string GetTheme()
