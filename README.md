@@ -13,7 +13,7 @@ cringfetch does what neofetch/screenfetch/\*fetch does. It shows short info abou
 
 You can set your custom color of Windows logo and labels. Check `Program.cs` for details.
 
-To see which colors are available, check `cmdColors.png` and `PSColors.png`.
+To see which colors are available, check `cmdColors.png` or `PSColors.png`.
 
 # Installation
 
