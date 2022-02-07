@@ -3,13 +3,18 @@ As seen on Linux!
 
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
-![screenshot](https://mknet.somee.com/githubscr/cringfetchcolor.png)
+***
+
+cringfetch does what neofetch/screenfetch/\*fetch does. It shows short info about your system, but now on Windows!
 
 ***
 
-cringfetch does what neofetch/screenfetch/* fetch does. It shows short info about your system, but now on Windows!
+## Colors
 
-***
+You can set your custom color of Windows logo and labels. Check `Program.cs` for details.
+
+To see which colors are available, check `cmdColors.png` or `PSColors.png`.
+
 # Installation
 
 ## Using
@@ -21,15 +26,15 @@ cringfetch does what neofetch/screenfetch/* fetch does. It shows short info abou
 3. Run `cmd.exe`
 4. Run program from cmd
 
-[Note] If you want to run cringfetch from any place, copy `cringfetch.exe` to your `Windows` folder.
+If you want to run cringfetch from any place, copy `cringfetch.exe` to your `%windir%`.
 
 ## Source code
 
 1. As always, download zip archive with source code.
-2. Open `cringfetch.sln` in Visual Studio (2013 recomended)
+2. Open `cringfetch.sln` in Visual Studio (2013 recommended)
 
 ## Compiling
 
 1. Click `Build` from top bar menu
 2. Click `Build solution` or `Build cringfetch`
-3. Get built binary in `cringfetch\bin\Debug`
+3. Get built binary in `cringfetch\bin\Debug` or `cringfetch\bin\Release`
