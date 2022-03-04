@@ -122,6 +122,7 @@ namespace cringfetch
             Console.ForegroundColor = ConsoleColor.DarkRed; Console.BackgroundColor = ConsoleColor.DarkRed; Console.Write("___");
             Console.ForegroundColor = ConsoleColor.DarkYellow; Console.BackgroundColor = ConsoleColor.DarkYellow; Console.Write("___");
             Console.ForegroundColor = ConsoleColor.DarkGray; Console.BackgroundColor = ConsoleColor.DarkGray; Console.Write("___\n");
+            Console.ResetColor();
             Console.WriteLine();
             Console.WriteLine();
         }
