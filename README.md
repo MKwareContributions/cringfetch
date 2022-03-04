@@ -9,6 +9,8 @@ cringfetch does what neofetch/screenfetch/\*fetch does. It shows short info abou
 
 ***
 
+![screenshot](https://i.imgur.com/QZLTesm.png)
+
 ## Colors
 
 You can set your custom color of Windows logo and labels. Check `Program.cs` for details.
