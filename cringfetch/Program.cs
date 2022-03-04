@@ -40,9 +40,6 @@ namespace cringfetch
             Console.ForegroundColor = color; Console.Write("               000 00000000000000000");
             Console.ResetColor();
             Console.WriteLine("    -------------");
-            Console.ForegroundColor = color;
-            Console.WriteLine("     0000000000000 00000000000000000");
-            Console.WriteLine("     0000000000000 00000000000000000");
             Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    OS");
             Console.ResetColor();
             Console.WriteLine(": " + GetOSVersion());
@@ -51,27 +48,28 @@ namespace cringfetch
             Console.WriteLine(": NT " + GetNTVersion());
             switch (arch)
             {
-                case(true):                                              
+                case(true):
                     Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    Architecture");
                     Console.ResetColor();
                     Console.WriteLine(": 64-bit");
                     break;
                 case(false):
-                    Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    Architecture");        
+                    Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    Architecture");
                     Console.ResetColor();
                     Console.WriteLine(": 32-bit");
                     break;
             }
             foreach (ManagementObject mo in osDetailsCollection)
             {
-                Console.ForegroundColor = color; Console.Write("                                        CPU");
+                Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    CPU");
                 Console.ResetColor();
                 Console.WriteLine(string.Format(": {0}", (string)mo["Name"]));
             }
-            Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    CPU cores");    
+            Console.ResetColor();
+            Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    CPU cores");
             Console.ResetColor();
             Console.WriteLine(": " + cores);
-            Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    RAM");
+            Console.ForegroundColor = color; Console.Write("                                        RAM");
             Console.ResetColor();
             Console.WriteLine(": " + totalGBRam + " GB");
             Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    LAN IPv4");
@@ -86,17 +84,18 @@ namespace cringfetch
 
             if (Process.GetProcessById(ppid).ProcessName == "powershell")
             {
-                Console.ForegroundColor = color; Console.Write("               000 00000000000000000    Shell");
+                Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    Shell");
                 Console.ResetColor();
                 Console.WriteLine(": PowerShell");
             }
             else
             {
-                Console.ForegroundColor = color; Console.Write("               000 00000000000000000    Shell");
+                Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    Shell");
                 Console.ResetColor();
                 Console.WriteLine(": cmd");
             }
-            Console.ForegroundColor = color; Console.Write("                           000000000    GPU");
+
+            Console.ForegroundColor = color; Console.Write("     0000000000000 00000000000000000    GPU");
             Console.ResetColor();
             ManagementObjectSearcher myVideoObject = new ManagementObjectSearcher("select * from Win32_VideoController");
 
@@ -104,6 +103,26 @@ namespace cringfetch
             {
                 Console.WriteLine(": " + obj["Name"]);
             }
+            Console.ForegroundColor = color; Console.Write("               000 00000000000000000    ");
+            Console.ForegroundColor = ConsoleColor.Blue; Console.BackgroundColor = ConsoleColor.Blue; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.Cyan; Console.BackgroundColor = ConsoleColor.Cyan; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.Gray; Console.BackgroundColor = ConsoleColor.Gray; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.Green; Console.BackgroundColor = ConsoleColor.Green; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.Magenta; Console.BackgroundColor = ConsoleColor.Magenta; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.Red; Console.BackgroundColor = ConsoleColor.Red; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.Yellow; Console.BackgroundColor = ConsoleColor.Yellow; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.White; Console.BackgroundColor = ConsoleColor.White; Console.Write("___\n");
+            Console.ResetColor();
+            Console.ForegroundColor = color; Console.Write("                           000000000    ");
+            Console.ForegroundColor = ConsoleColor.DarkBlue; Console.BackgroundColor = ConsoleColor.DarkBlue; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.DarkCyan; Console.BackgroundColor = ConsoleColor.DarkCyan; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.DarkGray; Console.BackgroundColor = ConsoleColor.DarkGray; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.DarkGreen; Console.BackgroundColor = ConsoleColor.DarkGreen; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.DarkMagenta; Console.BackgroundColor = ConsoleColor.DarkMagenta; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.BackgroundColor = ConsoleColor.DarkRed; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.DarkYellow; Console.BackgroundColor = ConsoleColor.DarkYellow; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.DarkGray; Console.BackgroundColor = ConsoleColor.DarkGray; Console.Write("___\n");
+            Console.ResetColor();
             Console.WriteLine();
             Console.WriteLine();
         }
