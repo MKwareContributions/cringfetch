@@ -103,12 +103,27 @@ namespace cringfetch
             {
                 Console.WriteLine(": " + obj["Name"]);
             }
-            Console.ForegroundColor = color; Console.WriteLine("               000 00000000000000000");
-            Console.ForegroundColor = color; Console.Write("                           000000000");
+            Console.ForegroundColor = color; Console.Write("               000 00000000000000000    ");
+            Console.ForegroundColor = ConsoleColor.Blue; Console.BackgroundColor = ConsoleColor.Blue; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.Cyan; Console.BackgroundColor = ConsoleColor.Cyan; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.Gray; Console.BackgroundColor = ConsoleColor.Gray; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.Green; Console.BackgroundColor = ConsoleColor.Green; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.Magenta; Console.BackgroundColor = ConsoleColor.Magenta; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.Red; Console.BackgroundColor = ConsoleColor.Red; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.Yellow; Console.BackgroundColor = ConsoleColor.Yellow; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.White; Console.BackgroundColor = ConsoleColor.White; Console.Write("___\n");
             Console.ResetColor();
+            Console.ForegroundColor = color; Console.Write("                           000000000    ");
+            Console.ForegroundColor = ConsoleColor.DarkBlue; Console.BackgroundColor = ConsoleColor.DarkBlue; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.DarkCyan; Console.BackgroundColor = ConsoleColor.DarkCyan; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.DarkGray; Console.BackgroundColor = ConsoleColor.DarkGray; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.DarkGreen; Console.BackgroundColor = ConsoleColor.DarkGreen; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.DarkMagenta; Console.BackgroundColor = ConsoleColor.DarkMagenta; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.BackgroundColor = ConsoleColor.DarkRed; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.DarkYellow; Console.BackgroundColor = ConsoleColor.DarkYellow; Console.Write("___");
+            Console.ForegroundColor = ConsoleColor.DarkGray; Console.BackgroundColor = ConsoleColor.DarkGray; Console.Write("___\n");
             Console.WriteLine();
             Console.WriteLine();
-            Console.Read();
         }
         
         public static string GetTheme()
